@@ -15,8 +15,8 @@ public class ScoreCalculateTest {
         List<Course> courses = List.of(new Course("OOP", 3, "A+"),
                 new Course("Database", 3, "A+"));
 
-        GradeCalculator gradeCalculator = new GradeCalculator(courses);
-        double gradeCalculate = gradeCalculator.calculate(courses);
+        GradeCalculator gradeCalculator = new GradeCalculator((List)courses);
+        double gradeCalculate = gradeCalculator.calculate();
 
         assertThat(gradeCalculate).isEqualTo(4.5);
     }

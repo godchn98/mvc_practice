@@ -4,13 +4,17 @@ import java.util.List;
 
 public class GradeCalculator {
 
-    private final List course;
+    private final Courses courses;
 
-    public GradeCalculator(List course) {
-        this.course = course;
+
+    public GradeCalculator(List<Courses> courses) {
+        this.courses = new Courses(courses);
     }
 
-    public double calculate(List<Course> courses) {
-        return 4.5;
+    public double calculate() {
+        double totalMCreditAndGrade = courses.multipliedCreditAndCourseGrade();
+        double totalCCredit =  courses.totalCompletedCredit();
+
+        return totalMCreditAndGrade/totalCCredit;
     }
 }
